@@ -110,6 +110,7 @@ class wowApi
 	$this->item	    = new resource_item($this->uriReq);
 	$this->pvp	    = new resource_pvp($this->uriReq);
 	$this->realm	    = new resource_realm($this->uriReq);
+	
     }
     
 }

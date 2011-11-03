@@ -10,5 +10,3 @@ class auth
 {
     //put your code here
 }
-
-?>

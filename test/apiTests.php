@@ -1,10 +1,6 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
+include "../api/api.php";
 /**
  * Description of characterTests
  *
@@ -12,9 +8,28 @@
  */
 class apiTests extends PHPUnit_Framework_TestCase
 {
-    public function basicTest()
+    
+    /**
+     *
+     * @var wowApi
+     */
+    public $api;
+    
+    public function setUp()
     {
-	$this->assert(true);
+	$this->api = new wowApi();
+	
+    }
+    
+    public function tearDown()
+    {
+	
+    }
+    
+    public function testSanity()
+    {
+	$this->assertEquals(true,true);
+	
     }
 
 }

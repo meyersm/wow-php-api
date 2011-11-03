@@ -1,6 +1,6 @@
 <?php
 
-include "../api/api.php";
+require "../api/api.php";
 
 class me{
     
@@ -12,7 +12,6 @@ class me{
 
 
 $api = new wowApi();
-
 //$data = $api->item->getItem(62354);
 
 

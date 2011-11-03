@@ -17,15 +17,15 @@ class loader
     public function __construct($root_dir)
     {
 	loader::$ROOT_DIR = $root_dir;
-	require "auth.php";
-	require "static.php";
-	require "uriRequest.php";
+	require_once "auth.php";
+	require_once "static.php";
+	require_once "uriRequest.php";
 
-	require $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "object_base.php";
-	require $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "list_base.php";
-	require $root_dir . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . "resource_base.php";
-	require $root_dir . DIRECTORY_SEPARATOR . "error" . DIRECTORY_SEPARATOR . "wowApiException.php";
-	require $root_dir . DIRECTORY_SEPARATOR . "error" . DIRECTORY_SEPARATOR . "wowApiErrorLogger.php";
+	require_once $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "object_base.php";
+	require_once $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "list_base.php";
+	require_once $root_dir . DIRECTORY_SEPARATOR . "resources" . DIRECTORY_SEPARATOR . "resource_base.php";
+	require_once $root_dir . DIRECTORY_SEPARATOR . "error" . DIRECTORY_SEPARATOR . "wowApiException.php";
+	require_once $root_dir . DIRECTORY_SEPARATOR . "error" . DIRECTORY_SEPARATOR . "wowApiErrorLogger.php";
 	
 	spl_autoload_register(array('loader', 'auto_load'));
     }

@@ -11,6 +11,7 @@ class object_base
     
     private $_orphans = array();
     public $lastModified;
+    public $_isEmpty = false;
     
     protected function assignSimpleValues(array $json_array)
     {

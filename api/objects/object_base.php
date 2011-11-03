@@ -15,6 +15,11 @@ class object_base
     
     protected function assignSimpleValues(array $json_array)
     {
+        if (empty($json_array))
+        {
+            $this->_isEmpty = true;
+            return;
+        }
 	foreach ($json_array as $key => $value)
 	{
 	    if (!is_array($value))

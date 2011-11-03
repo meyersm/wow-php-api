@@ -14,7 +14,7 @@ class list_base implements ArrayAccess,Countable,Iterator
 {
     protected $_internal_array;
     protected $iter_pos;
-    public $_isEmpty;
+    
     
     public function __construct($json_array) //This constructor will need to be overriden for objects with multi-dimensional arrays
     {
@@ -98,5 +98,10 @@ class list_base implements ArrayAccess,Countable,Iterator
        return $this->_internal_array;
    }
    
+   public function __get($name) 
+   {
+       if ($name == "_isEmpty")
+           return empty($this->_internal_array);
+   }
    
 }

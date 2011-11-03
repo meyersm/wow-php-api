@@ -186,7 +186,7 @@ class character extends object_base
      */
     public function getReputations()
     {
-	return $this->fetchSubObject('reputations',  'characterReputations');
+	return $this->fetchSubObject('reputation',  'characterReputations');
     }
     /**
      * @return characterStats

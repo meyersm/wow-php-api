@@ -17,9 +17,9 @@ class loader
     public function __construct($root_dir)
     {
 	loader::$ROOT_DIR = $root_dir;
-	require "auth.php";
-	require "static.php";
-	require "uriRequest.php";
+	require $root_dir . DIRECTORY_SEPARATOR . "core" . DIRECTORY_SEPARATOR . "auth.php";
+	require $root_dir . DIRECTORY_SEPARATOR . "core" . DIRECTORY_SEPARATOR . "static.php";
+	require $root_dir . DIRECTORY_SEPARATOR . "core" . DIRECTORY_SEPARATOR . "uriRequest.php";
 
 	require $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "object_base.php";
 	require $root_dir . DIRECTORY_SEPARATOR . "objects" . DIRECTORY_SEPARATOR . "list_base.php";

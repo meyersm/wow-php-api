@@ -27,6 +27,7 @@ $api = new wowApi();
  
 $guild = $api->guild->getGuild("Reagent Vendor", "destromath");
 print_r($guild);
+$guild->level;
 //print_r($guild->getAchievements());
 //print_r($guild->getMembers());
 /*
@@ -48,6 +49,6 @@ print_r($data->getActiveTalents());
 print_r($data->getInactiveTalents());
 print_r($data->getTitles());
 */
-print_r($data);
+//print_r($data);
 
 ?>

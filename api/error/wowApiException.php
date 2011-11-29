@@ -6,7 +6,7 @@
  *
  * @author michaelmeyers
  */
-class wowApiException
+class wowApiException extends Exception
 {
     public $error;
     public $file;

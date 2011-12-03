@@ -18,10 +18,10 @@ class achievementList extends object_base
     
     public function __construct(array $response_object)
     {
-	parent::__construct($response_object);
-	foreach ($response_object as $key => $val)
-	{
-	    $this->$key = $val;
-	}
+        parent::__construct($response_object);
+        foreach ($response_object as $key => $val)
+        {
+            $this->$key = $val;
+        }
     }
 }

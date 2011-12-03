@@ -1,5 +1,5 @@
 <?php
-require "apiTests.php";
+require_once "apiTests.php";
 /**
  * Description of characterTests
  *
@@ -29,8 +29,7 @@ class characterTests extends apiTests
      */
     public function testGetCompanions($char)
     {
-        print_r ($char->getCompanions());
-	$this->assertFalse($char->getCompanions()->_isEmpty);
+	    $this->assertFalse($char->getCompanions()->_isEmpty);
     }
     
     /**

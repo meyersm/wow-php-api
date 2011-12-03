@@ -18,7 +18,7 @@ class guildMembers extends list_base
        foreach ($json_array as $key => $value)
        {
 	   $value['character']['rank'] = $value['rank'];
-	   $this->_internal_array[] = new character($value[character]);
+	   $this->_internal_array[] = new character($value['character']);
        }
    }
     

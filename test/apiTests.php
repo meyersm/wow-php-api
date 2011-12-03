@@ -29,7 +29,6 @@ class apiTests extends PHPUnit_Framework_TestCase
     public function testSanity()
     {
 	$this->assertEquals(true,true);
-	
     }
 
 }

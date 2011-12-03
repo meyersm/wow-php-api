@@ -56,15 +56,15 @@ class guild extends object_base
     
     private function fetchSubObject($template,$class)
     {
-	if ($this->$template !== null) //was this object already fetched?
-	    return $this->$template;
-	else if (isset($this->_creation_object[$template])) //was this object returned with the original api call?
-		return $this->$template = new $class($this->_creation_object[$template]);
-	else //get this data then...
-	{
-	    $temp = resource_guild::$instance->getGuildAsArray($this->name, $this->realm, array($template));
-	    return $this->$template = new $class($temp[$template]);
-	}
+        if ($this->$template !== null) //was this object already fetched?
+            return $this->$template;
+        else if (isset($this->_creation_object[$template])) //was this object returned with the original api call?
+            return $this->$template = new $class($this->_creation_object[$template]);
+        else //get this data then...
+        {
+            $temp = resource_guild::$instance->getGuildAsArray($this->name, $this->realm, array($template));
+            return $this->$template = new $class($temp[$template]);
+        }
     }
 }
 

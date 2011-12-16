@@ -30,8 +30,8 @@ class object_base
     
     public function __set($name,$value)
     {
-	wowApiErrorlogger::log("Value $name does not exist in ". __CLASS__ ." but was found in response", __FILE__, __LINE__, wowApiErrorlogger::NOTICE);
-	$this->_orphans[$name] = $value;
+        wowApiErrorlogger::log("Value $name does not exist in ". __CLASS__ ." but was found in response", __FILE__, __LINE__, wowApiErrorlogger::NOTICE);
+        $this->_orphans[$name] = $value;
     }
     
     public function __get($name)

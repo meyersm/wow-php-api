@@ -16,25 +16,16 @@ class dataClasses extends object_base
     
     public function __construct(array $response_object)
     {
-	foreach ($response_object as $k => $v)
-	{
-	    $this->classes[$v['id']] = $v;
-	}
+        foreach ($response_object['classes'] as $k => $v)
+        {
+            $this->classes[$v['class']] = $v;
+        }
     }
-    
-    public function getbyId($id)
+
+    public function getNamebyClass($class)
     {
-	return $this->classes[$id];
+	    return $this->classes[$id]['name'];
     }
-    
-    public function getNamebyId($id)
-    {
-	return $this->classes[$id]['name'];
-    }
-    
-    public function getPowerTypebyId($id)
-    {
-	return $this->classes[$id]['powerType'];
-    }
+
   
 }

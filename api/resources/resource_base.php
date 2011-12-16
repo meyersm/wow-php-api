@@ -15,12 +15,12 @@ class resource_base
     
     public function __construct($uri)
     {
-	$this->uriReq = $uri;
+	    $this->uriReq = $uri;
     }
     
     public function send($uri,$parameters=null)
     {
-	return $this->uriReq->request($uri, $parameters);
+	    return $this->uriReq->request($uri, $parameters);
     }
     
 }

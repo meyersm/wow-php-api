@@ -17,8 +17,8 @@ class resource_character extends resource_base
   
     public function __construct($uri)
     {
-	parent::__construct($uri);
-	resource_character::$instance = $this;
+        parent::__construct($uri);
+        resource_character::$instance = $this;
     }
     
 	/**

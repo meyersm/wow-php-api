@@ -22,12 +22,9 @@ $api = new wowApi();
  //print wowApiErrorlogger::$error_log_method;
  
  wowApiErrorlogger::$error_log_function = "me::bla";
- $data= $api->character->getCharacterWithAllFields("grimskull", "destromath");
- 
-$guild = $api->guild->getGuild("Reagent Vendor", "destromath");
-print_r($guild);
-$guild->level;
-//print_r($guild->getAchievements());
+
+print_r($api->data->getGuildPerks());
+
 //print_r($guild->getMembers());
 /*
 print_r($data->getAchievements());
@@ -42,8 +39,7 @@ print_r($data->getMounts());
 //print_r($data->getProgression());
 //print_r($data->getPvP());
 //print_r($data->getQuests());
-$data->getReputations();
-print_r($data);
+
 //print_r($data->getStats());
 //print_r($data->getActiveTalents());
 //print_r($data->getInactiveTalents());

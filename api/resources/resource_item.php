@@ -11,18 +11,18 @@ class resource_item extends resource_base
        
        public function getItem($id)
        {
-	    $obj = $this->send($this->item_uri_base .'/' . $id);
-	    return new item($obj);
+            $obj = $this->send($this->item_uri_base .'/' . $id);
+            return new item($obj);
        }
        
        public function getItemList(array $id_array)
        {
-	   $obj = array();
-	   foreach ($id_array as $key => $val)
-	   {
-	       $obj[] = $this->send($this->item_uri_base .'/' . $val);
-	   }
-	   return new itemList($obj);
+           $obj = array();
+           foreach ($id_array as $key => $val)
+           {
+               $obj[] = $this->send($this->item_uri_base .'/' . $val);
+           }
+           return new itemList($obj);
        }
 }
 

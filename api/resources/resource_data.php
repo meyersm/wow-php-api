@@ -13,27 +13,30 @@ class resource_data extends resource_base
     
     public function getRaces()
     {
-	return $this->send($this->data_base_uri . "character/races");
+	    $data = $this->send($this->data_base_uri . "character/races");
+        return new dataRaces($data);
     }
     
     public function getClasses()
     {
-	return $this->send($this->data_base_uri . "character/classes");
+	    $data =  $this->send($this->data_base_uri . "character/classes");
+        return new dataClasses($data);
     }
     
     public function getGuildRewards()
     {
-	return $this->send($this->data_base_uri . "guild/rewards");
+	    return $this->send($this->data_base_uri . "guild/rewards");
     }
     
     public function getGuildPerks()
     {
-	return $this->send($this->data_base_uri . "guild/perks");
+	    return $this->send($this->data_base_uri . "guild/perks");
     }
     
     public function getItemClasses()
     {
-	return $this->send($this->data_base_uri . "item/classes");
+	    $data =  $this->send($this->data_base_uri . "item/classes");
+        return new dataClasses($data);
     }
     
     

@@ -33,7 +33,7 @@ class guild extends object_base
     
     public function __construct(array $response_object)
     {
-	parent::__construct($response_object);
+	    parent::__construct($response_object);
 	
     }
     
@@ -43,14 +43,14 @@ class guild extends object_base
      */
     public function getAchievements()
     {
-	return $this->fetchSubObject("achievements", "achievementList");
+	    return $this->fetchSubObject("achievements", "achievementList");
     }
     /**
      * @return guildMembers
      */
     public function getMembers()
     {
-	return $this->fetchSubObject("members", "guildMembers");
+	    return $this->fetchSubObject("members", "guildMembers");
     }
     
     

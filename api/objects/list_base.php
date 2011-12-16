@@ -27,10 +27,10 @@ class list_base implements ArrayAccess,Countable,Iterator
      */
     public function walkList()
     {
-	if (isset($this->_internal_array[$this->iter_pos]))
-	    return $this->_internal_array[$this->iter_pos++];
-	$this->iter_pos = 0; //Reset
-	return false;
+        if (isset($this->_internal_array[$this->iter_pos]))
+            return $this->_internal_array[$this->iter_pos++];
+        $this->iter_pos = 0; //Reset
+        return false;
     }
     
     //Implemented functions below

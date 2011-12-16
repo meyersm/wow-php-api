@@ -23,9 +23,9 @@ class resource_pvp extends resource_base
      */
     public function getArenaTeam($realm,$name,$size="5v5")
     {
-	$name = urlencode($name);
-	$data = $this->send($this->pvp_base_uri . "/$realm/$size/$name");
-	return new arenaTeam($data);
+        $name = urlencode($name);
+        $data = $this->send($this->pvp_base_uri . "/$realm/$size/$name");
+        return new arenaTeam($data);
     }
     //TODO: this still needs testing, since members array is empty on initial tests.
 }

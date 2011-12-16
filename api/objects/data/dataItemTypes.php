@@ -16,14 +16,14 @@ class dataItemTypes extends object_base
     
     public function __construct(array $response_object)
     {
-	foreach ($response_object as $k => $v)
-	{
-	    $this->itemTypes[$v['class']] = $v;
-	}
+        foreach ($response_object as $k => $v)
+        {
+            $this->itemTypes[$v['class']] = $v;
+        }
     }
     
     public function getTypebyClass($class)
     {
-	return $this->itemTypes[$class];
+	    return $this->itemTypes[$class];
     }
 }

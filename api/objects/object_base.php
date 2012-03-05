@@ -45,10 +45,15 @@ class object_base
 	wowApiErrorlogger::log("Value $name not found in ". __CLASS__ ." ", __FILE__, __LINE__, wowApiErrorlogger::NOTICE);
     }
     
-    public function __construct(array $response_object)
+    public function __construct($response_object)
     {
-	$this->assignSimpleValues($response_object);
-	return $this;
+        if (!is_array($response_object))
+        {
+            $this->_isEmpty = true;
+            return;
+        }
+        $this->assignSimpleValues($response_object);
+        return $this;
     }
     
 }

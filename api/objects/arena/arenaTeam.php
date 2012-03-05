@@ -30,15 +30,16 @@ class arenaTeam extends object_base
      */
     public $members = array();
     
-    public function __construct(array $response_object)
+    public function __construct($response_object)
     {
 	parent::__construct($response_object);
-	foreach ($response_object['members'] as $k => $v)
-	{
-	    if ($v === null) //Member array can be blank in some cases
-		return;
-	    $this->members[] = new arenaTeamMember($v);
-	}
+    if (!$this->_isEmpty)
+        foreach ($response_object['members'] as $k => $v)
+        {
+            if ($v === null) //Member array can be blank in some cases
+            return;
+            $this->members[] = new arenaTeamMember($v);
+        }
     }
 
 

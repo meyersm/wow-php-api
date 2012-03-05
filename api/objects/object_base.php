@@ -12,6 +12,7 @@ class object_base
     private $_orphans = array();
     public $lastModified;
     public $_isEmpty = false;
+    public $_creationObject;
     
     protected function assignSimpleValues(array $json_array)
     {
@@ -20,11 +21,12 @@ class object_base
             $this->_isEmpty = true;
             return;
         }
-	foreach ($json_array as $key => $value)
-	{
-	    if (!is_array($value))
-		$this->$key = $value; 
-	}
+        $this->_creationObject = $json_array;
+        foreach ($json_array as $key => $value)
+        {
+            if (!is_array($value))
+            $this->$key = $value;
+        }
 
     }
     

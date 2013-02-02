@@ -12,21 +12,24 @@ class dataTests extends apiTests
     public function testGetRaces()
     {
         $data = $this->api->data->getRaces();
-        $this->assertEquals($data['races'][0]['name'],"Human");
+        $this->assertEquals("Human",$data->getNamebyId(1));
     }
 
 
     public function testGetClasses()
     {
         $data = $this->api->data->getClasses();
-        $this->assertEquals($data['classes'][0]['name'],"Hunter");
+        $this->assertEquals("Hunter",$data->getNamebyId(0));
     }
 
 
     public function testGetGuildRewards()
     {
         $data = $this->api->data->getGuildRewards();
-        $this->assertEquals($data['rewards'][1]['achievement']['id'],4989);
+        $this->assertNotNull($data['rewards'][0]['achievement']['id']);
+        $this->assertNotNull($data['rewards'][0]['achievement']['title']);
+        $this->assertNotNull($data['rewards'][0]['achievement']['points']);
+        $this->assertNotNull($data['rewards'][0]['achievement']['description']);
     }
 
 
@@ -40,7 +43,7 @@ class dataTests extends apiTests
     public function testGetItemClasses()
     {
         $data = $this->api->data->getItemClasses();
-        $this->assertEquals($data['classes'][0]['name'],"Consumable");
+        $this->assertEquals("Consumable",$data->getNamebyClass(0));
     }
 }
 ?>

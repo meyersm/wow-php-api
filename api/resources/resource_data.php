@@ -36,7 +36,7 @@ class resource_data extends resource_base
     public function getItemClasses()
     {
 	    $data =  $this->send($this->data_base_uri . "item/classes");
-        return new dataClasses($data);
+        return new dataItemTypes($data);
     }
     
     

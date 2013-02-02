@@ -23,14 +23,7 @@ class characterTests extends apiTests
     {
 	$this->assertFalse($char->getAppearance()->_isEmpty);
     }
-    
-    /**
-     * @depends testGetCharacter
-     */
-    public function testGetCompanions($char)
-    {
-	    $this->assertFalse($char->getCompanions()->_isEmpty);
-    }
+
     
     /**
      * @depends testGetCharacter

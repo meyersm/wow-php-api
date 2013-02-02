@@ -26,6 +26,6 @@ class guildTests extends apiTests
      */
     public function testGetAchievements($guild)
     {
-       $this->assertEquals(5031,$guild->getAchievements()->achievementsCompleted[0]);
+       $this->assertEquals(4943,$guild->getAchievements()->achievementsCompleted[0]);
     }
 }

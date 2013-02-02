@@ -16,7 +16,7 @@ class dataItemTypes extends object_base
     
     public function __construct(array $response_object)
     {
-        foreach ($response_object as $k => $v)
+        foreach ($response_object['classes'] as $k => $v)
         {
             $this->itemTypes[$v['class']] = $v;
         }
@@ -25,5 +25,10 @@ class dataItemTypes extends object_base
     public function getTypebyClass($class)
     {
 	    return $this->itemTypes[$class];
+    }
+
+    public function getNamebyClass($class)
+    {
+        return $this->itemTypes[$class]['name'];
     }
 }

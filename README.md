@@ -3,6 +3,8 @@ wow-php-api
 
 PHP wrapper for Blizzard World of Warcraft Api
 
+[Blizzard Api Docs](http://blizzard.github.io/api-wow-docs/)
+
 
 How to use
 ----------
@@ -20,19 +22,25 @@ Examples
 ```php
 $wow = new wowApi();
 
-$char = $wow->character->getCharacter("character","realm"); //Just gets the base character data
-$mounts = $char->getMounts(); //This will trigger another api call to fetch mount info
-$anotherChar = $wow->character->getCharacterWithAllFields("char","realm"); //This fetches the character with ALL the sub fields, this object will be much larger
-$app = $anotherChar->getAppearance();//This will NOT trigger another api call because this data was already fetched
+//Just gets the base character data
+$char = $wow->character->getCharacter("character","realm"); 
+//This will trigger another api call to fetch mount info
+$mounts = $char->getMounts(); 
+//This fetches the character with ALL the sub fields, this object will be much larger
+$anotherChar = $wow->character->getCharacterWithAllFields("char","realm"); 
+//This will NOT trigger another api call because this data was already fetched
+$app = $anotherChar->getAppearance();
 
 $item = $wow->item->getItem(8529); //Get item by id
 print $item->name; //Noggenfogger Elixer
 
-$auctions = $wow->auction->getAuctions("MyRealm");//Get current auctions for a realm (This will be a large object and may take a few seconds to retrieve)
+//Get current auctions for a realm (This will be a large object and may take a few seconds to retrieve)
+$auctions = $wow->auction->getAuctions("MyRealm");
 
 $guild = $wow->guild->getGuild("MyGuild","Somerealm"); //Get a guild
 $guildName_Members = $guild->getMembers(); //Get the members
-print $guildName_Members->count(); //For list objects they implement ArrayAccess,Countable,Iterator
+//For list objects they implement ArrayAccess,Countable,Iterator
+print $guildName_Members->count(); 
 for ($i=0;$i < $guildName_Members->count();$i++)
 {
     $member = $guildName_Members[$i]; //Array access
@@ -65,4 +73,4 @@ wowApiErrorlogger::$error_level = wowApiErrorlogger::ALL;
 wowApiErrorlogger::$error_log_method = wowApiErrorlogger::LOG_FUNC;
 wowApiErrorlogger::$error_log_function = "Classname::StaticFunction"; //This will be called with error string passed
 ```
-[Refer to wowApiErrorLogger class for logging details](blob/master/api/error/wowApiErrorLogger.php)
+[Refer to wowApiErrorLogger class for logging details](api/error/wowApiErrorLogger.php)

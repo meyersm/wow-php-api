@@ -12,20 +12,14 @@
  */
 class resource_pvp extends resource_base
 {
-    private $pvp_base_uri = "/api/wow/arena";
-    
+
     /**
-     *
-     * @param string $realm
-     * @param string $name
-     * @param string $size valid values: 2v2 3v3 5v5
-     * @return arenaTeam 
+     * @param $type "2v2"  "3v3"  "5v5"  "rbg"
+     * @return dataLeaderboard
      */
-    public function getArenaTeam($realm,$name,$size="5v5")
+    public function getLeaderboard($type)
     {
-        $name = urlencode($name);
-        $data = $this->send($this->pvp_base_uri . "/$realm/$size/$name");
-        return new arenaTeam($data);
+        $lb =  $this->send("/api/wow/leaderboard/".$type);
+        return new dataLeaderboard($lb);
     }
-    //TODO: this still needs testing, since members array is empty on initial tests.
 }

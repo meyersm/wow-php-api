@@ -19,4 +19,6 @@ class realm extends object_base
        public $name;
        public $slug;
        public $battlegroup;
+       public $locale;
+       public $timezone;
 }

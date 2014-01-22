@@ -24,7 +24,6 @@ class object_base
         $this->_creationObject = $json_array;
         foreach ($json_array as $key => $value)
         {
-            if (!is_array($value))
             $this->$key = $value;
         }
 

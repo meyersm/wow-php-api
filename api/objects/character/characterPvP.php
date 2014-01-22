@@ -27,23 +27,29 @@ class characterPvP extends object_base
     
     public function __construct(array $response_object)
     {
-	parent::__construct($response_object);
-	$this->ratedBgRating = $response_object['ratedBattlegrounds']['personalRating'];
-	foreach ($response_object['ratedBattlegrounds']['battlegrounds'] as $key => $val)
-	{
-	    $var = $this->fullBgNameToVar($val['name']);
-	    $temp = new characterPvPBattlegroundStat($val);
-	    if ($var !== null)
-		$this->$var = $temp;
-	    $this->battleground[] = $temp;
-	}
-	if (empty($response_object['arenaTeams']))
-	    return $this;
-	foreach ($response_object['arenaTeams'] as $key => $val)
-	{
-	    $var = "arena_" . $val['size'];
-	    $this->$var = $val;
-	}
+        parent::__construct($response_object);
+        if (isset($response_object['ratedBattlegrounds']))
+        {
+            $this->ratedBgRating = $response_object['ratedBattlegrounds']['personalRating'];
+            foreach ($response_object['ratedBattlegrounds']['battlegrounds'] as $key => $val)
+            {
+                $var = $this->fullBgNameToVar($val['name']);
+                $temp = new characterPvPBattlegroundStat($val);
+                if ($var !== null)
+                    $this->$var = $temp;
+                $this->battleground[] = $temp;
+            }
+        }
+        else
+            $this->ratedBgRating = null;
+
+        if (empty($response_object['arenaTeams']))
+            return $this;
+        foreach ($response_object['arenaTeams'] as $key => $val)
+        {
+            $var = "arena_" . $val['size'];
+            $this->$var = $val;
+        }
     }
     
     
